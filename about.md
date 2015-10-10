@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-I'm a software engineer living in San Francisco.
+I&#39;m a software engineer living in San Francisco.
 
 ### More Information
 
