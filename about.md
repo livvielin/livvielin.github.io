@@ -4,12 +4,12 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+I'm a software engineer living in San Francisco.
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+I like dancing, martial arts, and board games.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[livvie.lin@gmail.com](mailto:email@domain.com)
