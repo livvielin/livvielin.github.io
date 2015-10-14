@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Start a Blog with Jekyll and GitHub Pages
+commentIssueId: 1
 ---
 
 In starting this blog, one of the first questions I considered was which blogging platform I should use.  My initial top choice was WordPress, but in the end I decided to go with Jekyll and GitHub Pages.  If you&#39;re familiar with GitHub, Jekyll is a great blogging platform that provides simplicity and speed.
