@@ -4,6 +4,8 @@ title: About
 permalink: /about/
 ---
 
+<img src="../images/avatar2.jpg" class="aboutimg"/>
+
 I&#39;m a software engineer living in San Francisco.
 
 ### More Information
