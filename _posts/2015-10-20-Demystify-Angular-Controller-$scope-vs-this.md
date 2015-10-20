@@ -26,8 +26,14 @@ app.controller('LabController', function () {
 });
 ```
 
-These two paradigms are generally interchangeable.
+These two paradigms are generally interchangeable.  However, binding properties to the view using ```$scope``` is an expensive operation, so the use of ```this``` can be advantageous for keeping ```$scope``` uncluttered.  But when using ```this```, make sure to check that it is bound the the proper scope!
+
+Whichever paradigm you choose, remember that the use of one pattern over another should remain consistent within an application, and ```$scope``` does need to be injected into the controller to use ```$scope``` functions such as ```$watch``` and ```$digest```.
+
+Check out the resources below for a more in-depth exploration of ```$scope``` and ```this``` syntax.
 
 ##### Resources
 1. <a href="http://toddmotto.com/digging-into-angulars-controller-as-syntax/" target="_blank">Digging into Angular's "Controller as" syntax</a> by Todd Motto
-2. <a href="http://www.johnpapa.net/do-you-like-your-angular-controllers-with-or-without-sugar/" target="_blank">Do You Like Your Angular Controllers with or without Sugar?</a> by John Papa
+1. <a href="http://toddmotto.com/rethinking-angular-js-controllers/
+" target="_blank">Rethinking AngularJS Controllers</a> by Todd Motto
+1. <a href="http://www.johnpapa.net/do-you-like-your-angular-controllers-with-or-without-sugar/" target="_blank">Do You Like Your Angular Controllers with or without Sugar?</a> by John Papa
