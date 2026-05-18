@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livvie Lin — Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a2e;
+            --ink-mid: #3d3d5c;
+            --ink-light: #7b7b9d;
+            --ink-faint: #c8c8dc;
+            --accent: #2a5caa;
+            --accent-light: #e8eef8;
+            --accent-mid: #a8bde0;
+            --surface: #ffffff;
+            --bg: #f4f5f8;
+            --rule: #dddde8;
+            --serif: 'DM Serif Display', Georgia, serif;
+            --sans: 'DM Sans', system-ui, sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: var(--sans);
+            font-size: 13.5px;
+            line-height: 1.55;
+            color: var(--ink);
+            background: var(--bg);
+            padding: 32px 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+            background: var(--surface);
+            box-shadow: 0 2px 24px rgba(26,26,46,0.10), 0 1px 4px rgba(26,26,46,0.06);
+        }
+
+        /* ── HEADER ─────────────────────────────────────── */
+        .header {
+            padding: 36px 44px 26px;
+            border-bottom: 2px solid var(--ink);
+        }
+
+        .header h1 {
+            font-family: var(--serif);
+            font-size: 3em;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            color: var(--ink);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 12px;
+            color: var(--ink-light);
+        }
+
+        .header-meta .pronouns {
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+
+        .header-meta .meta-sep {
+            margin: 0 10px;
+            color: var(--ink-faint);
+        }
+
+        .header-meta a {
+            color: var(--ink-light);
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .header-meta a:hover { color: var(--accent); text-decoration: underline; }
+
+        .header .tagline {
+            font-size: 12.5px;
+            color: var(--ink-mid);
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* ── TOP BAND: highlights + sidebar, same height ── */
+        .top-band {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+        }
+
+        .top-main {
+            padding: 28px 36px 18px 44px;
+            border-right: 1px solid var(--rule);
+        }
+
+        .top-sidebar {
+            padding: 28px 24px 18px;
+        }
+
+        /* ── SECTION DIVIDER ─────────────────────────────── */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0 44px;
+            margin: 0;
+        }
+
+        .section-divider-rule {
+            flex: 1;
+            height: 1px;
+            background: var(--rule);
+        }
+
+        .section-divider-label {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            padding: 10px 0;
+            white-space: nowrap;
+        }
+
+        /* ── FULL-WIDTH EXPERIENCE ───────────────────────── */
+        .experience-section {
+            padding: 28px 44px 40px;
+        }
+
+        /* ── SECTION LABELS ──────────────────────────────── */
+        .section-label {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 14px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        /* ── HIGHLIGHTS ──────────────────────────────────── */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .highlight-card {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent);
+            padding: 10px 12px;
+        }
+
+        .highlight-card strong {
+            display: block;
+            font-size: 11.5px;
+            font-weight: 500;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 3px;
+        }
+
+        .highlight-card p {
+            font-size: 12px;
+            color: var(--ink-mid);
+            line-height: 1.45;
+            font-weight: 300;
+        }
+
+        /* ── SIDEBAR ─────────────────────────────────────── */
+        .sidebar-section-label {
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--ink-light);
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .sidebar-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-list li {
+            font-size: 12px;
+            color: var(--ink-mid);
+            font-weight: 300;
+            line-height: 1.5;
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--rule);
+        }
+
+        .sidebar-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .sidebar-list li strong {
+            display: block;
+            font-weight: 500;
+            font-size: 12px;
+            color: var(--ink);
+            margin-bottom: 1px;
+        }
+
+        .sidebar-list li span {
+            font-size: 11.5px;
+            color: var(--ink-light);
+        }
+
+        .about-item {
+            font-size: 11.5px;
+            color: var(--ink-mid);
+            font-weight: 300;
+            margin-bottom: 9px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid var(--rule);
+            line-height: 1.5;
+        }
+
+        .about-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .about-item a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        .about-item a:hover { text-decoration: underline; }
+
+        /* ── EXPERIENCE ──────────────────────────────────── */
+        .company-block { margin-bottom: 22px; }
+        .company-block:last-child { margin-bottom: 0; }
+
+        .company-name-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .company-name {
+            font-family: var(--serif);
+            font-size: 1.35em;
+            font-weight: 400;
+            color: var(--ink);
+            letter-spacing: -0.01em;
+        }
+
+        .company-tenure {
+            font-size: 11px;
+            color: var(--ink-light);
+            font-weight: 400;
+            white-space: nowrap;
+            margin-left: auto;
+        }
+
+        .company-rule {
+            height: 1px;
+            background: linear-gradient(to right, var(--ink-faint), transparent);
+            margin-bottom: 10px;
+        }
+
+        .job {
+            margin-bottom: 12px;
+            padding-left: 14px;
+            border-left: 2px solid var(--rule);
+        }
+
+        .job:last-child { margin-bottom: 0; }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+
+        .job-title {
+            font-weight: 500;
+            font-size: 13px;
+            color: var(--ink);
+        }
+
+        .job-date {
+            font-size: 11.5px;
+            color: var(--ink-light);
+            white-space: nowrap;
+            font-style: italic;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 6px;
+        }
+
+        .tech-tag {
+            font-size: 10.5px;
+            font-weight: 400;
+            color: var(--accent);
+            background: var(--accent-light);
+            padding: 2px 7px;
+            border-radius: 2px;
+            letter-spacing: 0.02em;
+            line-height: 1.6;
+        }
+
+        .job ul {
+            padding-left: 14px;
+            list-style: none;
+        }
+
+        .job ul li {
+            font-size: 12.5px;
+            color: var(--ink-mid);
+            line-height: 1.5;
+            margin-bottom: 4px;
+            position: relative;
+            font-weight: 300;
+        }
+
+        .job ul li:last-child { margin-bottom: 0; }
+
+        .job ul li::before {
+            content: "–";
+            position: absolute;
+            left: -12px;
+            color: var(--accent-mid);
+        }
+
+        .job ul li strong {
+            font-weight: 500;
+            color: var(--ink);
+        }
+
+        /* ── FOOTER ──────────────────────────────────────── */
+        .page-footer {
+            border-top: 1px solid var(--rule);
+            padding: 10px 44px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .page-footer span {
+            font-size: 10.5px;
+            color: var(--ink-faint);
+            letter-spacing: 0.06em;
+        }
+
+        /* ── PRINT ───────────────────────────────────────── */
+        @media print {
+            body { background: #fff; padding: 0; font-size: 12px; }
+            .page { box-shadow: none; max-width: 100%; }
+            @page { margin: 0.45in 0.5in; size: letter; }
+            a { color: var(--accent); text-decoration: none; }
+            .highlight-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .tech-tag { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .page-footer { display: none; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1>Livvie Lin</h1>
+        <div class="header-meta">
+            <span class="pronouns">they / them</span>
+            <span class="meta-sep">·</span>
+            <a href="mailto:livvie.lin@gmail.com">livvie.lin@gmail.com</a>
+            <span class="meta-sep">·</span>
+            <a href="https://linkedin.com/in/livvielin" target="_blank">linkedin.com/in/livvielin</a>
+            <span class="meta-sep">·</span>
+            <a href="https://livvielin.github.io" target="_blank">livvielin.github.io</a>
+        </div>
+        <div class="tagline">Software Engineer passionate about rapidly turning big ideas into working prototypes and scaling them into reliable, user-loved products. I excel at deconstructing complex problems into simple solutions, wearing many hats from design to full-stack development to infra, and driving projects from concept to launch in fast-paced, ambiguous environments.</div>
+    </header>
+
+    <!-- TOP BAND: highlights left, education+about right — both end together -->
+    <div class="top-band">
+        <div class="top-main">
+            <div class="section-label">Highlights</div>
+            <div class="highlights-grid">
+                <div class="highlight-card">
+                    <strong>Rapid Prototyping</strong>
+                    <p>Built an end-to-end AI Personalization RAG prototype in 2 weeks, proving feasibility across 100+ internal products.</p>
+                </div>
+                <div class="highlight-card">
+                    <strong>System Reliability</strong>
+                    <p>Added a "9" of uptime for major clients by designing an Auto-Remediation system; cut error rates 50%.</p>
+                </div>
+                <div class="highlight-card">
+                    <strong>Developer Velocity</strong>
+                    <p>Cut incident mitigation from hours to minutes; drove adoption of Experimentation Framework across 150+ teams.</p>
+                </div>
+                <div class="highlight-card">
+                    <strong>End-to-End Execution</strong>
+                    <p>Shipped side projects including a home-hunting app and a bespoke murder mystery event site from scratch.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="top-sidebar">
+            <div class="sidebar-section-label">Education</div>
+            <ul class="sidebar-list">
+                <li>
+                    <strong>Hack Reactor</strong>
+                    <span>Software Engineering</span>
+                </li>
+                <li>
+                    <strong>UCLA School of Law</strong>
+                    <span>J.D. · CA Bar</span>
+                </li>
+                <li>
+                    <strong>Univ. of Washington</strong>
+                    <span>B.A. Business</span>
+                </li>
+            </ul>
+            <div class="sidebar-section-label" style="display:flex; align-items:center; justify-content:space-between;">
+                <span>About</span>
+                <span class="tech-tag" style="text-transform:none; letter-spacing:0;">React</span>
+            </div>
+            <div class="about-item">
+                🚪 Escape room reviewer<br>
+                <a href="https://theyescape.com" target="_blank">theyescape.com</a>
+            </div>
+            <div class="about-item" style="border-bottom:none; padding-bottom:0; margin-bottom:0;">
+                🎙 Voice actor<br>
+                <a href="https://livvielin.com" target="_blank">livvielin.com</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION DIVIDER -->
+    <div class="section-divider">
+        <div class="section-divider-rule"></div>
+        <span class="section-divider-label">Experience</span>
+        <div class="section-divider-rule"></div>
+    </div>
+
+    <!-- FULL-WIDTH EXPERIENCE -->
+    <div class="experience-section">
+
+        <!-- Google (current) -->
+        <div class="company-block">
+            <div class="company-name-row">
+                <span class="company-name">Google</span>
+                <span class="company-tenure">May 2022 – Present</span>
+            </div>
+            <div class="company-rule"></div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">AI Personalization Platform</span>
+                    <span class="job-date">Apr 2026 – Present</span>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">LLM Eval</span>
+                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">Distributed Systems</span>
+                    <span class="tech-tag">Testing Frameworks</span>
+                </div>
+                <ul>
+                    <li>Led the design and execution of a phased testing strategy for a managed AI personalization service, ensuring system safety and zero behavioral regression during a major architectural refactor into standalone modules.</li>
+                    <li>Developed a configuration-driven component testing framework that isolates core reasoning modules using mocked external dependencies, driving core infrastructure code to 90%+ test coverage.</li>
+                    <li>Designed an offline quantitative evaluation framework for AI models to measure quality metrics including latency, retrieval fidelity, multi-hop reasoning trajectory, privacy compliance, and qualitative helpfulness using LLM-as-a-judge methods.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Data Export Infrastructure &amp; AI Prototyping</span>
+                    <span class="job-date">May 2022 – Apr 2026</span>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Kotlin</span>
+                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">Distributed Systems</span>
+                    <span class="tech-tag">SLOs</span>
+                    <span class="tech-tag">A/B Testing</span>
+                </div>
+                <ul>
+                    <li><strong>AI Personalization:</strong> Spearheaded a strategic initiative and scalable C++ distributed data pipeline to process unstructured user data from 100+ products into AI-consumable formats; co-authored internal research on "Context Engine" architectures and designed an evaluation framework.</li>
+                    <li><strong>Reliability:</strong> Reduced unhappy export batches by 50% and client error rates by 50% through strict SLO execution and the launch of an automated data export recovery system.</li>
+                    <li><strong>Experimentation:</strong> Enabled faster rollouts for 150+ teams via a new Experimentation Framework, supported by custom metrics dashboards and agentic launch automation concepts.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Twitter -->
+        <div class="company-block">
+            <div class="company-name-row">
+                <span class="company-name">Twitter (X)</span>
+                <span class="company-tenure">Apr 2021 – May 2022</span>
+            </div>
+            <div class="company-rule"></div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Software Engineer — Societal Health</span>
+                    <span class="job-date">Apr 2021 – May 2022</span>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Web</span>
+                    <span class="tech-tag">Android</span>
+                    <span class="tech-tag">iOS</span>
+                    <span class="tech-tag">A/B Testing</span>
+                </div>
+                <ul>
+                    <li>Executed front-end projects for the Societal Health team to fight misinformation and improve security.</li>
+                    <li>Led the client revamp of the 2FA enrollment experience across web, Android, and iOS.</li>
+                    <li>Led an experiment on Moments sharing to increase engagement, and ran experiments on reply sectioning.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Google (early) -->
+        <div class="company-block">
+            <div class="company-name-row">
+                <span class="company-name">Google</span>
+                <span class="company-tenure">Feb 2016 – Apr 2021</span>
+            </div>
+            <div class="company-rule"></div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Subscribe with Google</span>
+                    <span class="job-date">Oct 2020 – Apr 2021</span>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">Java</span>
+                </div>
+                <ul>
+                    <li>Developed full-stack features (Angular, TypeScript, Java), including a multi-currency pricing table, enhancing publisher flexibility and international reach.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Chrome Usable Security</span>
+                    <span class="job-date">Jul 2018 – Oct 2020</span>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Go</span>
+                    <span class="tech-tag">Angular</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">Objective-C</span>
+                    <span class="tech-tag">A/B Testing</span>
+                </div>
+                <ul>
+                    <li><strong>Full-Stack Security:</strong> Developed the <em>Suspicious Site Reporter</em> Chrome extension (JavaScript, HTML/CSS, Go) and HTTPS encryption features for the Transparency Report (Angular, Java).</li>
+                    <li><strong>iOS Security:</strong> Shipped new C++/Objective-C warning interstitials, including Lookalike Interstitials to combat phishing, bringing iOS parity to Android.</li>
+                    <li><strong>Data-Driven UX:</strong> Led A/B testing on Chrome's security indicators to improve user comprehension, and conducted accessibility audits.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Security &amp; Privacy UI Eng</span>
+                    <span class="job-date">Nov 2017 – Jul 2018</span>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">i18n</span>
+                    <span class="tech-tag">a11y</span>
+                </div>
+                <ul>
+                    <li><strong>Cloud KMS UI:</strong> Delivered key UI features for Cloud Key Management Service. Led the UI launch for integrating KMS with Google Compute Engine.</li>
+                    <li><strong>Binary Authorization UI:</strong> Implemented policy view/edit pages, API wrappers, and cluster rule management, championing a11y and i18n. Migrated KMS JavaScript codebase to TypeScript.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <div class="job-header">
+                    <span class="job-title">Privacy &amp; Security Reviews</span>
+                    <span class="job-date">Feb 2016 – Nov 2017</span>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">Microservices</span>
+                </div>
+                <ul>
+                    <li>Performed in-depth security reviews for products like Firebase Auth, driving critical privacy design changes.</li>
+                    <li>Migrated an internal proposal analysis tool from Python to a scalable Java microservices architecture, authoring full documentation.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="page-footer">
+        <span>LIVVIE LIN · SOFTWARE ENGINEER</span>
+        <span>livvie.lin@gmail.com</span>
+    </footer>
+
+</div>
+</body>
+</html>
