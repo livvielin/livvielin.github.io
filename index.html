@@ -33,28 +33,29 @@
 
   .kv p{margin:4px 0; font-size:14px}
   .kv b{color:var(--accent); font-weight:700}
-  footer{margin-top:26px; font-size:13px; color:var(--ink)}
+  .stack{color:#5a6068; font-family:ui-monospace,"SF Mono",Menlo,monospace; font-size:.85em}
+  footer{margin-top:20px; font-size:13px; color:var(--ink)}
   footer a{color:var(--accent)}
 
   /* ── One-page print/PDF settings ─────────────────────────────── */
-  @page{ size:letter; margin:0.35in 0.4in; }
+  @page{ size:letter; margin:0.28in 0.36in; }
   @media print{
-    body{font-size:12.9px; line-height:1.18}
+    body{font-size:12.03px; line-height:1.13}
     .wrap{padding:0; max-width:none}
     a{text-decoration:none; color:var(--accent)}
-    h1{font-size:20px}
-    .contact{font-size:10.9px; margin-top:1px}
-    .intro{font-size:12.4px; margin-top:6px}
-    h2{font-size:10.4px; margin:8px 0 2px}
-    .job{margin:7px 0 0}
-    .job h3{font-size:13.4px}
-    .sub{margin:5px 0 0}
-    .sub h4{font-size:12.4px}
-    .dates{font-size:10.4px}
-    ul{margin:1px 0 0; padding-left:15px}
-    li{margin:1.5px 0; font-size:12.4px}
-    .kv p{margin:1.5px 0; font-size:12.4px}
-    footer{margin-top:6px; font-size:10.4px}
+    h1{font-size:19.0px}
+    .contact{font-size:10.45px; margin-top:1px}
+    .intro{font-size:11.72px; margin-top:5px}
+    h2{font-size:10.03px; margin:9px 0 2.25px}
+    .job{margin:6px 0 0; border-left-width:2px; padding-left:8px}
+    .job h3{font-size:12.77px}
+    .sub{margin:4px 0 0}
+    .sub h4{font-size:11.72px}
+    .dates{font-size:10.03px}
+    ul{margin:1.5px 0 0; padding-left:13px}
+    li{margin:1.2px 0; font-size:11.72px}
+    .kv p{margin:1.2px 0; font-size:11.72px}
+    footer{margin-top:5px; font-size:10.34px}
   }
   @media (max-width:560px){ .job,.sub{flex-direction:column; gap:0} }
 </style>
@@ -65,73 +66,75 @@
 <h1>Livvie Lin <span style="font-weight:400">— Software Engineer</span></h1>
 <p class="contact">they/them · San Francisco Bay Area · <a href="mailto:livvie.lin@gmail.com">livvie.lin@gmail.com</a> · <a href="https://linkedin.com/in/livvielin">linkedin.com/in/livvielin</a></p>
 
-<p class="intro">10+ years of experience at Google and Twitter across trust and safety, privacy and security, misinformation defense, compliance-critical reliability, and AI-powered tooling. Licensed attorney (State Bar of California, inactive) with a career built where engineering meets regulation.</p>
+<p class="intro">Software engineer with 10+ years of experience across the full stack. Shipped user-facing products at Google and Twitter scale, built products 0-to-1, and led internal developer platforms adopted by 100+ teams. Privacy and compliance expertise from a decade of trust and safety work, plus a J.D.</p>
 
 <h2>Experience</h2>
 
 <div class="job"><h3>Google — Software Engineer, Tech Lead</h3><span class="dates">May 2022 – Present</span></div>
 
-<div class="sub"><h4>Google Labs — Beam, Google's AI-first 3D video communication platform</h4><span class="dates">2026 – Present</span></div>
-
-<div class="sub"><h4>AI Personalization Platform — Tech Lead, Testing &amp; Infrastructure</h4><span class="dates">2026</span></div>
+<div class="sub"><h4>Google Labs — Beam, AI-first 3D video communication platform</h4><span class="dates">2026 – Present</span></div>
 <ul>
-  <li>Led a 5-engineer team through its integration into a ~30-engineer AI personalization infrastructure org; owned the phased testing strategy that protected behavioral parity while the personalization stack was refactored into standalone modules.</li>
-  <li>Designed a declarative behavioral testing framework isolating core reasoning modules, adopted by ~50 engineers across infrastructure and research; built AI-powered test generation tooling to save 20+ engineer-hours weekly.</li>
+  <li>Lead release workflows and developer experience. Rebuilt the release tracking dashboard (SQL) into a single unified surface to evaluate rollout safety, eliminating manual cross-tool checks; automated verification gates (Python) across pipeline handoffs to validate build artifacts, release manifests, and device attestation before deployment.</li>
 </ul>
 
-<div class="sub"><h4>AI Foundations — Data Export Infrastructure &amp; AI Prototyping, Tech Lead</h4><span class="dates">2022 – 2026</span></div>
+<div class="sub"><h4>AI Personalization Platform</h4><span class="dates">2026</span></div>
 <ul>
-  <li>Tech lead of ~5 engineers and technical point of contact for 5+ partner teams; mentored a junior engineer through promotion.</li>
-  <li>Led 3 engineers building an end-to-end C++ distributed RAG pipeline converting unstructured user data from 100+ Google products into AI-consumable context; load-tested to multi-terabyte scale on AI-generated data. Pitched and demoed it, unprompted, to Distinguished Engineer and Senior Director leadership; results presented to VPs of two orgs (~500 and ~3,000 engineers), leading to the team's new charter in Google's AI Personalization initiative.</li>
-  <li>Co-wrote an internal research paper on evaluating personalized AI: generated a synthetic body of test data, compared RAG, long-context, and hybrid architectures on speed vs. context capacity, and explored benchmark and rubric designs for making AI-judged quality scores more consistent.</li>
-  <li>Designed an automated remediation system for failed data exports (failure classification, granular retry), replacing 10+ engineer-hours of manual retry work weekly; added a full nine to per-client SLOs across ~10 business-critical clients, including legal and compliance workloads under EU data-portability and warrant obligations.</li>
-  <li>During pre-launch verification, caught a four-year silent data-loss bug in the manual process the remediation system replaced; fixed the data loss before shipping automation that would have amplified it.</li>
-  <li>Replaced a release-bound flag system shared by 150+ services with a decoupled experimentation framework; set rollout strategy tiered to change risk, built monitoring dashboards and tooling to evaluate launches. Changes live in minutes instead of hours-to-weeks; adopted by 100+ internal teams.</li>
+  <li>Built a declarative testing framework (Python, Protobuf) and AI-powered test generation used by ~50 engineers across infrastructure and research, saving 20+ engineer-hours weekly.</li>
+</ul>
+
+<div class="sub"><h4>AI Foundations &amp; Data Portability</h4><span class="dates">2022 – 2026</span></div>
+<ul>
+  <li>Spearheaded an end-to-end distributed RAG pipeline (C++) with 3 engineers, converting unstructured data from 100+ Google products into AI-consumable context, load-tested to multi-terabyte scale; co-wrote internal paper comparing RAG, long-context, and hybrid architectures. Demoed to Distinguished Engineer and Senior Director leadership; results reached VPs of two orgs and seeded the team's new charter in Google's AI Personalization initiative.</li>
+  <li>Replaced a release-bound flag system shared by 150+ services with a self-serve experimentation platform (Java, Python) covering the launch lifecycle. Wrote the risk-tiered rollout policy and built config templates, instrumentation, and dashboards that won voluntary adoption from 100+ teams; cut rollout time from weeks to minutes.</li>
+  <li>Led 5 engineers on client reliability and compliance. Designed automated remediation for failed exports (Kotlin, Java), replacing 10+ engineer-hours of manual retry work weekly; added a full nine to per-client SLOs across ~10 business-critical clients, including legal and compliance workloads under EU data-portability and warrant obligations.</li>
+  <li>Scaled platform adoption by managing a 2-engineer workstream to deliver self-serve partner onboarding workflows and integration APIs (Java); mentored an engineer through promotion and hosted an intern who converted to full-time.</li>
 </ul>
 
 <div class="job"><h3>Twitter — Software Engineer, Societal Health</h3><span class="dates">Apr 2021 – May 2022</span></div>
 <ul>
-  <li>Led the client-side revamp of two-factor authentication enrollment across web, Android, and iOS, improving the account-security UX for the full user base.</li>
-  <li>Ran integrity experiments on reply sectioning and Moments sharing to improve resilience against misinformation.</li>
+  <li>Owned web (React) on a 3-engineer client team (web, iOS, Android) and led the cross-platform revamp of two-factor authentication enrollment across 200M+ active users.</li>
+  <li>Designed and ran integrity experiments on reply sectioning and Moments sharing, testing interfaces that build resilience to misinformation through education rather than warnings alone.</li>
 </ul>
 
 <div class="job"><h3>Google — Software Engineer</h3><span class="dates">Feb 2016 – Apr 2021</span></div>
 
 <div class="sub"><h4>Subscribe with Google</h4><span class="dates">2020 – 2021</span></div>
 <ul>
-  <li>Built full-stack publisher-subscription features including multi-currency pricing.</li>
+  <li>Built full-stack offer management and multi-currency pricing features 0-to-1 for Subscribe with Google Zero (Angular, TypeScript, Java), orchestrating Google Pay services (pricing, tax, FX) to lay the foundation for Reader Revenue Manager, now adopted by 4,000+ digital news publishers across 40+ countries.</li>
 </ul>
 
 <div class="sub"><h4>Chrome Usable Security</h4><span class="dates">2018 – 2020</span></div>
 <ul>
-  <li>Shipped anti-phishing and lookalike-URL warning interstitials in Chrome for iOS at Chrome scale; built the Suspicious Site Reporter extension feeding user reports into Safe Browsing's abuse-detection pipeline; led A/B testing on security indicators to improve user comprehension.</li>
+  <li>Shipped the Suspicious Site Reporter Chrome extension 0-to-1 (JavaScript, Go), prototyping the UI in Figma to win UX funding; scaled to 127K+ users, feeding 29K+ threat reports into Safe Browsing's abuse-detection pipeline.</li>
+  <li>Took ownership of Chrome's iOS security surfaces, shipping anti-phishing and lookalike-URL interstitials at Chrome scale to reach parity with Android; ran A/B tests on URL bar and security indicators to improve user comprehension. Hosted 5 interns; 3 returned for another internship or converted to full-time.</li>
 </ul>
 
-<div class="sub"><h4>Security &amp; Privacy UI</h4><span class="dates">2017 – 2018</span></div>
+<div class="sub"><h4>Security &amp; Privacy UI and Reviews</h4><span class="dates">2016 – 2018</span></div>
 <ul>
-  <li>Delivered Cloud KMS features, the KMS–Compute Engine integration launch, and Binary Authorization policy UI.</li>
+  <li>Built Google Cloud console UIs in TypeScript, delivering Cloud KMS features, the KMS–Compute Engine integration launch, and the Binary Authorization policy UI.</li>
+  <li>Rebuilt the internal data-access evaluation engine (Python → Java microservices), adopted by 20+ teams; conducted pre-launch privacy and security architecture reviews across Google products including Assistant.</li>
 </ul>
 
-<div class="sub"><h4>Privacy &amp; Security Reviews</h4><span class="dates">2016 – 2017</span></div>
+<h2>Projects</h2>
 <ul>
-  <li>Conducted pre-launch privacy and security design reviews, driving user data protection changes before launch.</li>
-  <li>Rebuilt internal access-review tooling supporting human decisions on access to sensitive user data (Python → Java microservices); onboarded 20–30 teams.</li>
+  <li><b>Ledger</b> — household finance app: recurring charges, cards and statement credits, budgets, points-versus-cash travel redemption comparator. <span class="stack">Next.js 15 (App Router) · React 19 · TypeScript · Tailwind · Supabase · Vercel</span></li>
+  <li><b>Yule &amp; Co.</b> — event site plus an intranet running a 20-player multiplayer game: two-tier auth boundary, signed-URL photo uploads, live standings, Web Push, schema-as-code CI. <span class="stack">Astro 5 · React 19 · TypeScript · Supabase</span></li>
+  <li><b>Home Hunter</b> — collaborative house-hunting app: configurable weighted rubric, listing-URL parser, LLM disclosure-risk reader, redesign tooling. <span class="stack">React 19 · TanStack Query · Zustand · Supabase</span></li>
+  <li><b>They Escape</b> — public ranked index of 200+ escape rooms across 20+ regions: custom review parsing, multi-axis filtering. Shipped 2022, maintained since. <a href="https://theyescape.com">theyescape.com</a></li>
 </ul>
 
 <h2>Skills</h2>
 <div class="kv">
-  <p><b>Languages:</b> Python, C++, TypeScript/JavaScript, Java, Kotlin, Go, SQL</p>
-  <p><b>AI:</b> LLM evaluation, LLM-as-a-judge, RAG and retrieval, prompt engineering, Claude API, AI-assisted development</p>
-  <p><b>Systems:</b> distributed systems, data pipelines, SLOs and reliability, retry design, experimentation and A/B testing, testing frameworks, React</p>
+  <p><b>Languages &amp; Backend:</b> Python, Go, Java, Kotlin, C++, TypeScript/JavaScript, SQL, distributed systems, REST/gRPC APIs, data pipelines, Supabase (RLS, Auth), SLOs &amp; reliability</p>
+  <p><b>Frontend:</b> React, Next.js (App Router, Server Actions), Angular, Astro, Tailwind CSS, browser extensions, accessibility</p>
+  <p><b>AI &amp; Delivery:</b> LLM evaluation, LLM-as-a-judge (rubric decomposition), RAG &amp; retrieval, prompt engineering, agentic workflows, GitHub Actions (CI/CD), Vercel, tiered rollouts, experimentation &amp; A/B testing</p>
 </div>
 
 <h2>Education &amp; Credentials</h2>
 <div class="kv">
   <p><b>J.D., UCLA School of Law</b> — Attorney, State Bar of California (inactive)</p>
-  <p><b>B.A. Business Administration, University of Washington</b></p>
+  <p><b>B.A. Business Administration</b>, University of Washington</p>
 </div>
-
-<footer>Beyond work: escape room reviewer (<a href="https://theyescape.com">theyescape.com</a>) · TCG player · builds personal projects end-to-end with AI coding tools</footer>
 
 </div>
 </body>
