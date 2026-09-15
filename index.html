@@ -40,22 +40,22 @@
   /* ── One-page print/PDF settings ─────────────────────────────── */
   @page{ size:letter; margin:0.28in 0.36in; }
   @media print{
-    body{font-size:12.03px; line-height:1.13}
+    body{font-size:12.32px; line-height:1.13}
     .wrap{padding:0; max-width:none}
     a{text-decoration:none; color:var(--accent)}
-    h1{font-size:19.0px}
-    .contact{font-size:10.45px; margin-top:1px}
-    .intro{font-size:11.72px; margin-top:5px}
-    h2{font-size:10.03px; margin:9px 0 2.25px}
+    h1{font-size:19.46px}
+    .contact{font-size:10.7px; margin-top:1px}
+    .intro{font-size:12.0px; margin-top:5px}
+    h2{font-size:10.27px; margin:9px 0 2.25px}
     .job{margin:6px 0 0; border-left-width:2px; padding-left:8px}
-    .job h3{font-size:12.77px}
+    .job h3{font-size:13.08px}
     .sub{margin:4px 0 0}
-    .sub h4{font-size:11.72px}
-    .dates{font-size:10.03px}
+    .sub h4{font-size:12.0px}
+    .dates{font-size:10.27px}
     ul{margin:1.5px 0 0; padding-left:13px}
-    li{margin:1.2px 0; font-size:11.72px}
-    .kv p{margin:1.2px 0; font-size:11.72px}
-    footer{margin-top:5px; font-size:10.34px}
+    li{margin:1.2px 0; font-size:12.0px}
+    .kv p{margin:1.2px 0; font-size:12.0px}
+    footer{margin-top:5px; font-size:10.59px}
   }
   @media (max-width:560px){ .job,.sub{flex-direction:column; gap:0} }
 </style>
@@ -77,14 +77,10 @@
   <li>Lead release workflows and developer experience. Rebuilt the release tracking dashboard (SQL) into a single unified surface to evaluate rollout safety, eliminating manual cross-tool checks; automated verification gates (Python) across pipeline handoffs to validate build artifacts, release manifests, and device attestation before deployment.</li>
 </ul>
 
-<div class="sub"><h4>AI Personalization Platform</h4><span class="dates">2026</span></div>
-<ul>
-  <li>Built a declarative testing framework (Python, Protobuf) and AI-powered test generation used by ~50 engineers across infrastructure and research, saving 20+ engineer-hours weekly.</li>
-</ul>
-
-<div class="sub"><h4>AI Foundations &amp; Data Portability</h4><span class="dates">2022 – 2026</span></div>
+<div class="sub"><h4>AI Personalization &amp; Data Portability</h4><span class="dates">2022 – 2026</span></div>
 <ul>
   <li>Spearheaded an end-to-end distributed RAG pipeline (C++) with 3 engineers, converting unstructured data from 100+ Google products into AI-consumable context, load-tested to multi-terabyte scale; co-wrote internal paper comparing RAG, long-context, and hybrid architectures. Demoed to Distinguished Engineer and Senior Director leadership; results reached VPs of two orgs and seeded the team's new charter in Google's AI Personalization initiative.</li>
+  <li>Built a declarative testing framework (Python, Protobuf) and AI-powered test generation used by ~50 engineers across infrastructure and research, saving 20+ engineer-hours weekly.</li>
   <li>Replaced a release-bound flag system shared by 150+ services with a self-serve experimentation platform (Java, Python) covering the launch lifecycle. Wrote the risk-tiered rollout policy and built config templates, instrumentation, and dashboards that won voluntary adoption from 100+ teams; cut rollout time from weeks to minutes.</li>
   <li>Led 5 engineers on client reliability and compliance. Designed automated remediation for failed exports (Kotlin, Java), replacing 10+ engineer-hours of manual retry work weekly; added a full nine to per-client SLOs across ~10 business-critical clients, including legal and compliance workloads under EU data-portability and warrant obligations.</li>
   <li>Scaled platform adoption by managing a 2-engineer workstream to deliver self-serve partner onboarding workflows and integration APIs (Java); mentored an engineer through promotion and hosted an intern who converted to full-time.</li>
